@@ -13,6 +13,8 @@
 =====                   https://github.com/gismo                 =====
 ======================================================================
 ```
+## This is an archived version!
+This repository includes an archived version of G+Smo (June 3rd, 2021).
 
 # Prerequisites
 
@@ -190,23 +192,6 @@ eleven modules are present as sub-folders:
 * **doc**
 
   Files related to doxygen documentation.
-
-# Contact and support
-
-* Wiki pages:
-
-  https://github.com/gismo/gismo/wiki
-
-* Bug reports:
-
-  https://github.com/gismo/gismo/issues
-
-
-# People
-
-Coordinator and maintainer: Angelos Mantzaflaris
-
-See full list in [our wiki pages](https://github.com/gismo/gismo/wiki/About--G-Smo)
 
 # OS-license
 
