@@ -13,9 +13,121 @@
 =====                   https://github.com/gismo                 =====
 ======================================================================
 ```
-## This is an archived version!
-This repository includes an archived version of G+Smo (June 3rd, 2021).
+# Compile and run this version
+This repository includes an archived version of G+Smo (June 3rd, 2021). It accompanies the paper H.M. Verhelst, M. Möller, J.H. Den Besten, A. Mantzaflaris, M.L. Kaminski (2021). _Stretch-Based Hyperelastic Material Formulations for Isogeometric Kirchhoff-Love Shells with Application to Wrinkling_ (https://hal.archives-ouvertes.fr/hal-02890963v2).
 
+To compile this specific archive and run all the examples, run the following commands
+```
+# Go to the directory where you cloned this repository
+cd path/to/directory
+
+# Create a build folder and execute CMake
+make
+
+# Go into the build folder and add the CMake options
+cd build
+cmake . -DCMAKE_CXX_STANDARD=17 -DCMAKE_BUILD_TYPE=Release -DGISMO_KLSHELL=ON -DGISMO_STRUCTURALANALYSIS=ON -DGISMO_WITH_SPECTRA=ON
+```
+The relevant examples are stored in `gismo/extensions/gsStructuralAnalysis/examples/`.  To compule the examples, call
+```
+# inside the build directory
+make <name of example>
+```
+To consequently run the examples,
+```
+# inside the build directory
+./bin/<run command>
+```
+The run commands name of the examples all start with `benchmark_` and can be found together with relevant run options in the subsections below.
+
+### Uniaxial tension case
+```
+benchmark_UniaxialTension -m <int> -I <int> -c <int>
+# -m      <int Material>
+#         1: Neo-Hookean,
+#         2: Mooney-Rivlin,
+#         4: Ogden (only with Implementation 3)
+# -I      <int Implementation>
+#         1: Analytical
+#         2: Generalized
+#         3: Spectral
+# -c      <int Compressibility>
+#         0: Incompressible
+#         1: Compressible
+```
+### Pressurized balloon
+```
+benchmark_Balloon -m <int> -I <int> -c <int>
+# -m      <int Material>
+#         1: Neo-Hookean,
+#         2: Mooney-Rivlin,
+#         4: Ogden (only with Implementation 3)
+# -I      <int Implementation>
+#         1: Analytical
+#         2: Generalized
+#         3: Spectral
+```
+### Frustrum
+```
+# Using the Arc-Length Method (ALM)
+benchmark_FrustrumALM -M <int> -I <int> -t <int> -N <int>
+# Using the Arc-Length Method (DC)
+benchmark_FrustrumDC -M <int> -I <int> -t <int> -N <int>
+# Options:
+# -M      <int Material>
+#         1: Neo-Hookean,
+#         2: Mooney-Rivlin,
+#         4: Ogden (only with Implementation 3)
+# -I      <int Implementation>
+#         1: Analytical
+#         2: Generalized
+#         3: Spectral
+# -t      <int testCase>
+#         0: Constant top edge
+#         1: Variable top edge
+# -N      <int Number of load steps>
+```
+### Wrinkling material test
+```
+benchmark_MaterialTest -M <int> -I <int> -t <int>
+# -M      <int Mateial>
+#         1: Neo-Hookean,
+#         2: Mooney-Rivlin,
+#         4: Ogden (only with Implementation 3)
+# -I      <int Implementation>
+#         1: Analytical
+#         2: Generalized
+#         3: Spectral
+# -t      <int testCase>
+#         1: Roohbakashan
+#         2: Panaitescu
+```
+### Wrinkling material test convergence
+```
+benchmark_MaterialTestConv -M <int> -I <int> -r <int> -e <int>
+# -M      <int Material>
+#         1: Neo-Hookean,
+#         2: Mooney-Rivlin,
+#         4: Ogden (only with Implementation 3)
+# -I      <int Implementation>
+#         1: Analytical
+#         2: Generalized
+#         3: Spectral
+# -r      <Number of refinement steps>
+# -e      <Number of order elevations (-e 0 gives order 1 splines)>
+```
+### Wrinkling benchmark
+```
+benchmark_Wrinkling -M <int> -I <int>
+# -M      <int Material>
+#         1: Neo-Hookean,
+#         2: Mooney-Rivlin,
+#         4: Ogden (only with Implementation 3)
+# -I      <int Implementation>
+#         1: Analytical
+#         2: Generalized
+#         3: Spectral
+```
 # Prerequisites
 
 * Operating systems:
