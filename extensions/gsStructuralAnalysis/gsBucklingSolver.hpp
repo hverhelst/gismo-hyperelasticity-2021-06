@@ -67,7 +67,7 @@ gsBucklingSolver<T,GEigsMode>::computeSparse_impl(T shift, index_t number, index
   else if (solver.info()==Spectra::CompInfo::NumericalIssue){ GISMO_ERROR("Spectra did not converge! Error code: NumericalIssue"); }
   else if (solver.info()==Spectra::CompInfo::NotConverging) { GISMO_ERROR("Spectra did not converge! Error code: NotConverging"); }
   else if (solver.info()==Spectra::CompInfo::NotComputed)   { GISMO_ERROR("Spectra did not converge! Error code: NotComputed");   }
-  else 														{ GISMO_ERROR("No error code known"); }
+  else                                                      { GISMO_ERROR("No error code known"); }
 
   if (m_verbose) { gsInfo<<"." ; }
   m_values  = solver.eigenvalues();
@@ -106,7 +106,7 @@ gsBucklingSolver<T,GEigsMode>::computeSparse_impl(T shift, index_t number, index
   else if (solver.info()==Spectra::CompInfo::NumericalIssue){ GISMO_ERROR("Spectra did not converge! Error code: NumericalIssue"); }
   else if (solver.info()==Spectra::CompInfo::NotConverging) { GISMO_ERROR("Spectra did not converge! Error code: NotConverging"); }
   else if (solver.info()==Spectra::CompInfo::NotComputed)   { GISMO_ERROR("Spectra did not converge! Error code: NotComputed");   }
-  else 														{ GISMO_ERROR("No error code known"); }
+  else                                                      { GISMO_ERROR("No error code known"); }
 
   if (m_verbose) { gsInfo<<"." ; }
   m_values  = solver.eigenvalues();
