@@ -14,7 +14,7 @@
 ======================================================================
 ```
 # Compile and run this version
-This repository includes an archived version of G+Smo (June 3rd, 2021). It accompanies the paper H.M. Verhelst, M. Möller, J.H. Den Besten, A. Mantzaflaris, M.L. Kaminski (2021). _Stretch-Based Hyperelastic Material Formulations for Isogeometric Kirchhoff-Love Shells with Application to Wrinkling_ (https://hal.archives-ouvertes.fr/hal-02890963v2).
+This repository includes an archived version of G+Smo (June 23rd, 2021). It accompanies the paper H.M. Verhelst, M. Möller, J.H. Den Besten, A. Mantzaflaris, M.L. Kaminski (2021). _Stretch-Based Hyperelastic Material Formulations for Isogeometric Kirchhoff-Love Shells with Application to Wrinkling_ (https://hal.archives-ouvertes.fr/hal-02890963v2).
 
 To compile this specific archive and run all the examples, run the following commands
 ```
